@@ -1,6 +1,7 @@
-from kafka import KafkaProducer
-from functools import partial
 import asyncio
+from functools import partial
+
+from kafka import KafkaProducer
 
 
 class KafkaProducerAsync(KafkaProducer):

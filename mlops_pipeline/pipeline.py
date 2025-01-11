@@ -1,10 +1,11 @@
-from kafka import KafkaConsumer
-import json
-import aiohttp
-from typing import Dict
-import logging
 import asyncio
+import json
+import logging
 from concurrent.futures import ThreadPoolExecutor
+from typing import Dict
+
+import aiohttp
+from kafka import KafkaConsumer
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -120,7 +121,6 @@ class DataProcessingService:
 
         except Exception as e:
             logger.error(f"Consumer error: {str(e)}")
-
 
     async def run(self):
         logger.info("Starting data processing service...")

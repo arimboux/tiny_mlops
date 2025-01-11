@@ -1,7 +1,6 @@
 import asyncio
 import json
 import logging
-import traceback
 
 from fastapi import FastAPI, HTTPException
 
@@ -30,7 +29,6 @@ async def remove_background_endpoint(request: ImageRequest):
             "replace-background-start", result["result"]["image"]["url"]
         )
     except Exception as e:
-        print(traceback.format_exc())
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -66,7 +64,7 @@ async def process_image(request: ProcessImages):
 
         return {
             "status": "success",
-            "message": f"Successfully queued {len(request.images)} images for processing",
+            "message": f"Successfully queued {len(request.images)} images",
         }
 
     except Exception as e:

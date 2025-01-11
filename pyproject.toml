@@ -15,6 +15,31 @@ asyncio = "^3.4.3"
 aiohttp = "^3.11.11"
 
 
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.1"
+mypy = "^1.14.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"  # Adjust based on your Python version
+
+lint.select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+]
+
+# Ignore these rules
+lint.ignore = ["B904"]
+
+# Exclude files and directories
+exclude = [
+    ".git",
+    ".venv",
+    "dist",
+]

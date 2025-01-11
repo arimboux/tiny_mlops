@@ -1,8 +1,10 @@
-import fal_client
-from fastapi import HTTPException
-from mlops_pipeline.payload import ImageRequest
 import asyncio
 from typing import Any
+
+import fal_client
+from fastapi import HTTPException
+
+from mlops_pipeline.payload import ImageRequest
 
 
 async def process_image_with_model(
